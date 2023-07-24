@@ -1,0 +1,66 @@
+.footer {
+  // width: 100%;
+  background-color: black;
+  color: white;
+  width: 1280px;
+  margin: 0 auto;
+  padding: 30px;
+  letter-spacing: 0.5px;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+
+  &__right-up {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__input {
+    background-color: black;
+    border-bottom: 1px solid white;
+    padding: 9px 0;
+    color: white;
+    caret-color: white;
+    width: 250px;
+  }
+
+  ::placeholder {
+    color: white;
+    font-family: inherit;
+  }
+
+  &__btn {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+  }
+
+  &__header {
+    font-size: 1.3rem;
+  }
+
+  &__center {
+    display: flex;
+    // align-items: center;
+    //dwa divy, jeden po lewej z tekstem, drugi z listami, i one tez beda flexami
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+
+  li {
+    margin-bottom: 5px;
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.9rem;
+  }
+}
+
+// dla ul inputa, daty i listy 1rem. dla reszty 1,2 , może więcej dla h3
