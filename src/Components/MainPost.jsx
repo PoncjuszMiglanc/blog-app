@@ -1,21 +1,24 @@
+import "./main-post.scss";
+import PostInfo from "./PostInfo";
+import SecondaryPost from "./SecondaryPost";
+
 const MainPost = () => {
   return (
     <>
       <main className="main-post">
-        <div className="main-post__head">
-          <h1>Tytuł całego bloga</h1>
-          <p>Podtytuł mojego bloga</p>
-        </div>
+        <h1 className="main-post__header">Tytuł całego bloga</h1>
+        <p className="main-post__subheader">Podtytuł mojego bloga</p>
         <div className="main-post__view">
-          <p className="author">Wojciech An</p>
-          <p className="date">22.05.2023</p>
-          <h2>Tytuł wpisu blogowego</h2>
-          <p>Podtytuł wpisu</p>
-          <div className="tags">
-            <span>Film</span>
-            <span>Berlinale</span>
-            <span>Drama</span>
-            <span>Michaelangelo Antonioni</span>
+          <div className="main-post__picture">
+            <PostInfo color={"rgb(236, 233, 233)"} padding={30} margin={1} />
+          </div>
+          <div className="main-post__list">
+            <SecondaryPost />
+            <SecondaryPost />
+            <SecondaryPost />
+            <SecondaryPost />
+            <SecondaryPost />
+            <SecondaryPost />
           </div>
         </div>
       </main>

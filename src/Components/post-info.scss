@@ -1,0 +1,46 @@
+.info {
+  background-color: transparent;
+  text-align: left;
+
+  &__meta {
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__separator {
+    display: inline-block;
+    margin: 0 7px;
+    padding: 2.5px;
+    border-radius: 2.5px;
+    background-color: black;
+  }
+
+  &__title {
+    font-size: 2rem;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+  }
+
+  &__sub {
+    letter-spacing: 0.5px;
+  }
+
+  &__tags {
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__tag {
+    display: inline-block;
+    padding: 1px 8px;
+    border-radius: 14px;
+    border: 1px solid black;
+  }
+}
