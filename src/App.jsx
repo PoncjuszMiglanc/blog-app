@@ -1,14 +1,24 @@
 import "./App.css";
-import TheNav from "./Components/TheNav";
-import TheFooter from "./Components/TheFooter";
+import { Route, Routes } from "react-router-dom";
 import MainPost from "./Components/MainPost";
+import BlogPost from "./pages/BlogPost";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
+import NotFound from "./pages/NotFound";
+import Layout from "./Layout";
 
 function App() {
   return (
     <>
-      <TheNav />
-      <MainPost />
-      <TheFooter />
+      <Routes>
+        <Route element={<Layout />}>
+          <Route index element={<MainPost />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/posts/:id" element={<BlogPost />} />
+        </Route>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </>
   );
 }
