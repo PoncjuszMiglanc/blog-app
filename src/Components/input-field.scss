@@ -1,0 +1,20 @@
+.input {
+  // background-color: yellow;
+  width: 400px;
+  margin: 0 auto 1rem auto;
+  &__label {
+    display: block;
+    text-align: left;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+  }
+
+  &__field {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid rgb(223, 220, 220);
+    font-size: 1rem;
+  }
+}
