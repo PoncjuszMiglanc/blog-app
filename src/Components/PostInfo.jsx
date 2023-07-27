@@ -19,7 +19,7 @@ const PostInfo = ({ color, padding, margin }) => {
             </a>
           </span>
         </div>
-
+        {/* to meta musi byc komponentem, ale to później */}
         <h2 className="info__title" style={{ marginBottom: `${margin}rem` }}>
           Tytuł wpisu blogowego
         </h2>

@@ -14,8 +14,12 @@ const TheNav = () => {
             <nav>
               <ul>
                 <li className="header__list-item">Home</li>
-                <li className="header__list-item">About</li>
-                <li className="header__list-item">Kontakt</li>
+                <li className="header__list-item">
+                  <Link to="/posts/1">Post</Link>
+                </li>
+                <li className="header__list-item">
+                  <Link to="/posts/create">Nowy</Link>
+                </li>
               </ul>
             </nav>
             <div className="header__logins">

@@ -6,6 +6,7 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import NotFound from "./pages/NotFound";
 import Layout from "./Layout";
+import CreatePost from "./pages/CreatePost";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/posts/:id" element={<BlogPost />} />
+          <Route path="/posts/create" element={<CreatePost />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

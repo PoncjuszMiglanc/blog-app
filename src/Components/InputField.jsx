@@ -27,7 +27,3 @@ InputField.propTypes = {
 };
 
 export default InputField;
-
-//for i id będą w propsie
-
-//label, placeholder i id
