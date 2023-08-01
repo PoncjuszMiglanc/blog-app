@@ -4,7 +4,6 @@ import InputField from "./InputField";
 import PropTypes from "prop-types";
 
 const FormCard = ({ items, cardText }) => {
-  //byc moze card zmienie na card__form bo sie powiela wrapper
   return (
     <>
       <div className="card">
@@ -15,16 +14,20 @@ const FormCard = ({ items, cardText }) => {
             {items.map((item) => {
               return (
                 <InputField
-                  key={Math.random()}
+                  key={item.id}
                   label={item.label}
                   placeholder={item.placeholder}
                   type={item.type}
                   id={item.id}
+                  setValue={item.setValue}
+                  value={item.value}
                 />
               );
             })}
+            <button onClick={cardText.sendData} className="card__btn">
+              {cardText.btn}
+            </button>
           </form>
-          <button className="card__btn">{cardText.btn}</button>
 
           <div className="card__divider">lub</div>
           <p className="card__sub">
