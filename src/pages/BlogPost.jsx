@@ -11,10 +11,6 @@ const BlogPost = () => {
           <div className="post__head">
             <p className="post__category">Recenzja</p>
             <h1 className="post__title">Tytuł recenzji filmu</h1>
-            <p className="post__subtitle">
-              Tu będzie wybrany cytat z środka recenzji będący takim smaczkiem
-              tego co jest w tekście
-            </p>
             <div className="post__meta">
               <span className="post__author">
                 <a href="">Jan Kowalski</a>
