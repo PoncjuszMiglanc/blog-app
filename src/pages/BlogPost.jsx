@@ -7,7 +7,7 @@ const BlogPost = () => {
   return (
     <>
       <MainContainer>
-        <div className="post">
+        <div className="blog-post">
           <div className="post__head">
             <p className="post__category">Recenzja</p>
             <h1 className="post__title">Tytuł recenzji filmu</h1>
