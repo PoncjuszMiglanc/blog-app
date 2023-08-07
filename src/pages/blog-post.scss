@@ -1,6 +1,6 @@
 .blog-post {
   padding: 30px;
-
+  //znow moje wlasne nazewnictwo klas doprowadzilo do problemu
   &__head {
     text-align: center;
     // background-color: rgb(179, 238, 238);
@@ -49,7 +49,8 @@
     margin: 0 auto;
     width: 80%;
     height: 400px;
-    background-image: url("../assets/pic1.jpg");
+    // background-image: url("../assets/pic1.jpg");
+    background-size: cover;
     background-position: center;
     margin-bottom: 3rem;
   }

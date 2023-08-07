@@ -1,51 +1,95 @@
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
 import MainContainer from "../Components/MainContainer";
 import "./blog-post.scss";
 
 const BlogPost = () => {
-  // const { id } = useParams();
+  //możliwe, ze zamiast background image to powinny być osobno image, skoro pełnią rolę osobnego obrazka a nie tła
+  const { id } = useParams();
+  const [post, setPost] = useState(null);
+
+  const getPost = () => {
+    fetch(`http://localhost:8080/posts/${id}`)
+      .then((res) => {
+        return res.json();
+      })
+      .then((res) => {
+        setPost(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  useEffect(() => {
+    getPost();
+  }, []);
+
   return (
     <>
       <MainContainer>
         <div className="blog-post">
-          <div className="post__head">
-            <p className="post__category">Recenzja</p>
-            <h1 className="post__title">Tytuł recenzji filmu</h1>
-            <div className="post__meta">
-              <span className="post__author">
-                <a href="">Jan Kowalski</a>
+          <div className="blog-post__head">
+            <p className="blog-post__category">
+              {!post ? "" : post.post.category}
+            </p>
+            <h1 className="blog-post__title">{!post ? "" : post.post.title}</h1>
+            {/* <button onClick={() => console.log(post.post.image)}>POST</button>
+            <button onClick={() => console.log(id)}>PARAMS</button> */}
+            <div className="blog-post__meta">
+              <span className="blog-post__author">
+                <a href="">{!post ? "" : post.post.author}</a>
               </span>
-              <span className="post__separator"></span>
-              <span className="post__date">
+              <span className="blog-post__separator"></span>
+              <span className="blog-post__date">
                 <a href="">
-                  <time dateTime="25.07.2023">27 Lipca 2023</time>
+                  <time
+                    dateTime={
+                      !post
+                        ? ""
+                        : new Date(post.post.createdAt).toLocaleDateString(
+                            "en-GB"
+                          )
+                    }
+                  >
+                    {!post
+                      ? ""
+                      : new Date(post.post.createdAt).toLocaleDateString(
+                          "pl-PL",
+                          {
+                            month: "long",
+                            year: "numeric",
+                            day: "numeric",
+                          }
+                        )}
+                  </time>
                 </a>
               </span>
             </div>
           </div>
-          <div className="post__img"></div>
-          <div className="post__content">
-            <div className="post__lead">
+          {!post ? (
+            ""
+          ) : (
+            <div
+              className="blog-post__img"
+              style={{
+                backgroundImage: `url("http://localhost:8080/images/${post.post.image}")`,
+              }}
+            ></div>
+          )}
+          {/* {!post ? (
+            <p>Nie ma posta</p>
+          ) : (
+            <img src={`http://localhost:8080/images/${post.post.image}`} />
+          )} */}
+          <div className="blog-post__content">
+            <div className="blog-post__lead">
               <p>
-                <strong>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Asperiores voluptate provident nihil natus voluptatem eos
-                  commodi minima cumque similique possimus. Lorem ipsum dolor
-                  si.
-                </strong>
-              </p>
-              <br />
-              <p>
-                <strong>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Asperiores voluptate provident nihil natus voluptatem eos
-                  commodi minima cumque similique possimus. Lorem ipsum dolor
-                  si.
-                </strong>
+                <strong>{!post ? "" : post.post.content}</strong>
               </p>
             </div>
-            <div className="post__divider">***</div>
-            <div className="post__text">
+            <div className="blog-post__divider">***</div>
+            <div className="blog-post__text">
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
                 quis veritatis asperiores, adipisci unde perspiciatis sed
