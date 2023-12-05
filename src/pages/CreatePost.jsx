@@ -27,6 +27,7 @@ const CreatePost = () => {
     fetch("http://localhost:8080/post", {
       method: "POST",
       body: formData,
+      credentials: "include",
     })
       .then((res) => {
         return res.json();

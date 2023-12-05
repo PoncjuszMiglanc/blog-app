@@ -12,7 +12,7 @@ const SignIn = () => {
   const handler = (e) => {
     e.preventDefault();
     console.log(email, pass);
-    fetch("http://localhost:8080/post", {
+    fetch("http://localhost:8080/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -21,6 +21,7 @@ const SignIn = () => {
         email,
         pass,
       }),
+      credentials: "include",
     })
       .then((res) => {
         return res.json();
