@@ -1,8 +1,7 @@
-// import "./form-card.scss";
-import '../assets/scss/components/form-card.scss';
 import { Link } from 'react-router-dom';
-import InputField from './InputField';
 import PropTypes from 'prop-types';
+import InputField from './InputField';
+import '../assets/scss/components/form-card.scss';
 
 const FormCard = ({ items, cardText }) => {
 	return (

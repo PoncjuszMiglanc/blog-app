@@ -4,7 +4,7 @@ import '../assets/scss/components/main-container.scss';
 const MainContainer = ({ children }) => {
 	return (
 		<>
-			<div className="main-container">{children}</div>
+			<main className="container">{children}</main>
 		</>
 	);
 };

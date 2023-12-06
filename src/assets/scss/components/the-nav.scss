@@ -2,26 +2,21 @@
 
 .header {
 	width: 100%;
-	// font-weight: 500;
-	// letter-spacing: 0.7px;
-	// font-size: 1.2rem;
 	background-color: v.$white;
 	padding: 10px 0;
+
 	&__wrapper {
 		width: 1280px;
 		margin: 0 auto;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		// background-color: white;
-		//tu zrobię to samo co z footerem czyli wrapper wypierdalam i jego style wchodzą do headera
-		// padding: 10px 30px;
 	}
 
-	&__nav {
+	&__panel {
 		display: flex;
 		align-items: center;
-		gap: 80px;
+		gap: 30px;
 	}
 
 	&__list-item {

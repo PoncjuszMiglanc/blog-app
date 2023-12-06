@@ -1,18 +1,18 @@
 import { Route, Routes } from 'react-router-dom';
-import MainPost from './Components/MainPost';
-import BlogPost from './pages/BlogPost';
+import Layout from './Layout';
+import HomePage from './pages/HomePage';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
-import NotFound from './pages/NotFound';
-import Layout from './Layout';
+import BlogPost from './pages/BlogPost';
 import CreatePost from './pages/CreatePost';
+import NotFound from './pages/NotFound';
 
 function App() {
 	return (
 		<>
 			<Routes>
 				<Route element={<Layout />}>
-					<Route index element={<MainPost />} />
+					<Route index element={<HomePage />} />
 					<Route path="/signin" element={<SignIn />} />
 					<Route path="/signup" element={<SignUp />} />
 					<Route path="/posts/:id" element={<BlogPost />} />

@@ -1,10 +1,8 @@
 @use '../variables' as v;
 
-.main-container {
+.container {
 	margin: 0 auto;
 	width: 1280px;
-	// min-height: 100px;
 	min-height: 100vh;
 	background-color: pink;
-	// background-color: v.$secondary;
 }

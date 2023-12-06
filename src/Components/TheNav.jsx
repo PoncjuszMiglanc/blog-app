@@ -1,5 +1,5 @@
-import '../assets/scss/components/the-nav.scss';
 import { Link } from 'react-router-dom';
+import '../assets/scss/components/the-nav.scss';
 
 const TheNav = () => {
 	const logOut = (e) => {
@@ -26,14 +26,14 @@ const TheNav = () => {
 		<>
 			<header className="header">
 				<div className="header__wrapper">
-					<div className="logo">
-						<Link to="/">LOGO</Link>
-					</div>
-
-					<div className="header__nav">
+					<Link to="/">LOGO</Link>
+					<section className="header__panel">
 						<nav>
 							<ul>
-								<li className="header__list-item">Home</li>
+								<li className="header__list-item">About</li>
+								<li className="header__list-item">Kontakt</li>
+								<li className="header__list-item">Coś</li>
+								<li className="header__list-item">Kategorie</li>
 								<li className="header__list-item">
 									<Link to="/posts/1">Post</Link>
 								</li>
@@ -56,7 +56,7 @@ const TheNav = () => {
 								<Link to="/signup">Zarejestruj</Link>
 							</button>
 						</div>
-					</div>
+					</section>
 				</div>
 			</header>
 		</>

@@ -1,5 +1,5 @@
-import '../assets/scss/components/input-field.scss';
 import PropTypes from 'prop-types';
+import '../assets/scss/components/input-field.scss';
 
 const InputField = ({ label, placeholder, type, id, value, setValue }) => {
 	return (
