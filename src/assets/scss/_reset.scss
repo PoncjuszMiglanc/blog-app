@@ -1,0 +1,48 @@
+@use './variables' as v;
+
+*,
+::before,
+::after {
+	box-sizing: border-box;
+	margin: 0;
+}
+html {
+	-webkit-font-smoothing: auto;
+	-webkit-text-size-adjust: 100%;
+}
+
+//być może dam commmon jeszcze
+body {
+	background-color: v.$background-gray;
+}
+
+input {
+	border: none;
+}
+
+input:focus {
+	outline: none;
+}
+
+button {
+	border: none;
+	padding: 8px 20px;
+	font: inherit;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:visited {
+	color: inherit;
+}

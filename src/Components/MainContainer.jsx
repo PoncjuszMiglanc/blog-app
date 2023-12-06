@@ -1,16 +1,16 @@
-import PropTypes from "prop-types";
-import "./main-container.scss";
+import PropTypes from 'prop-types';
+import '../assets/scss/components/main-container.scss';
 
 const MainContainer = ({ children }) => {
-  return (
-    <>
-      <div className="main-container">{children}</div>
-    </>
-  );
+	return (
+		<>
+			<div className="main-container">{children}</div>
+		</>
+	);
 };
 
 MainContainer.propTypes = {
-  children: PropTypes.object,
+	children: PropTypes.object,
 };
 
 export default MainContainer;

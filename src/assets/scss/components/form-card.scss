@@ -1,0 +1,72 @@
+.card {
+	// background-color: rgb(255, 255, 255);
+	background-color: green;
+	// width: 1280px;
+	width: 1000px;
+	margin: 0 auto;
+	display: flex;
+	padding: 20px;
+
+	&__pic {
+		height: 700px;
+		width: 700px;
+		background-image: url('../assets/pic5.jpeg');
+		background-size: cover;
+		background-position: center;
+	}
+
+	&__form {
+		padding: 30px;
+		text-align: center;
+		// background-color: pink;
+		width: 100%;
+	}
+
+	&__header {
+		letter-spacing: 0.8px;
+		margin-bottom: 1rem;
+	}
+
+	&__sub {
+		letter-spacing: 0.5px;
+		max-width: 50ch;
+		margin: 0 auto 3rem auto;
+	}
+
+	&__btn {
+		background-color: black;
+		color: white;
+		border-radius: 10px;
+		width: 400px;
+		margin: 2rem 0 2rem 0;
+	}
+
+	&__divider {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 400px;
+		margin: 0 auto 2rem auto;
+	}
+
+	&__divider::before,
+	&__divider::after {
+		content: '';
+		height: 1px;
+		background-color: black;
+		flex-grow: 1;
+	}
+
+	&__divider::before {
+		margin-right: 1rem;
+	}
+	&__divider::after {
+		margin-left: 1rem;
+	}
+
+	&__sub-login {
+		font-weight: 700;
+		text-decoration: underline;
+		margin-left: 5px;
+	}
+}
