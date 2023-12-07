@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import MainContainer from '../Components/MainContainer';
-// import FormCard from "../Components/FormCard";
-import InputField from '../Components/InputField';
+import FormCard from '../Components/FormCard';
+// import InputField from '../Components/InputField';
 
 const SignIn = () => {
 	//redirectem trzba będzie się zająć
@@ -36,15 +36,43 @@ const SignIn = () => {
 		setEmail('');
 		setPass('');
 	};
-	//tu jest podejście z mniejszą liczbą komponentów
+	const items = [
+		{
+			label: 'Email',
+			placeholder: 'Podaj adres email',
+			type: 'text',
+			id: 'email',
+			setValue: setEmail,
+			value: email,
+		},
+		{
+			label: 'Hasło',
+			placeholder: 'Podaj hasło',
+			type: 'text',
+			id: 'pass',
+			setValue: setPass,
+			value: pass,
+		},
+	];
+
+	const cardText = {
+		head: 'Logowanie',
+		sub: 'Cieszymy się, że wróciłeś. Zapraszamy do ponownego zalogowania :)',
+		btn: 'Zaloguj',
+		cta: 'Nie masz jeszcze konta?',
+		invitation: 'Załóż konto za darmo!',
+		link: '/signup',
+		sendData: handler,
+	};
+
 	return (
 		<MainContainer>
-			{/* <FormCard items={items} cardText={cardText} /> */}
-			<div className="card">
+			<FormCard items={items} cardText={cardText} />
+			{/* <div className="card">
 				<div className="card__form">
 					<h1 className="card__header">Logowanie</h1>
 					<p className="card__sub">
-						Cieszymy się, że wróciłeś. Zapraszamy do ponownego zalogowania :)
+						Cieszymy się, że wróciłeś. Zapraszamy do ponownego zalogowania.
 					</p>
 					<form action="">
 						<InputField
@@ -78,27 +106,9 @@ const SignIn = () => {
 						</span>
 					</p>
 				</div>
-			</div>
+			</div> */}
 		</MainContainer>
 	);
 };
 
 export default SignIn;
-
-// const items = [
-//   {
-//     label: "Email",
-//     placeholder: "Podaj adres email",
-//     type: "text",
-//     id: "email",
-//   },
-//   { label: "Hasło", placeholder: "Podaj hasło", type: "text", id: "pass" },
-// ];
-// const cardText = {
-//   head: "Logowanie",
-//   sub: "Cieszymy się, że wróciłeś. Zapraszamy do ponownego zalogowania :)",
-//   btn: "Zaloguj",
-//   cta: "Nie masz jeszcze konta?",
-//   invitation: "Załóż konto za darmo!",
-//   link: "/signup",
-// };

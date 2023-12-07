@@ -27,7 +27,7 @@ const TheNav = () => {
 			<header className="header">
 				<div className="header__wrapper">
 					<Link to="/">LOGO</Link>
-					<section className="header__panel">
+					<div className="header__panel">
 						<nav>
 							<ul>
 								<li className="header__list-item">About</li>
@@ -47,16 +47,22 @@ const TheNav = () => {
 								onClick={logOut}
 								className="header__sign header__sign--in"
 							>
-								Wyloguj
+								Log Out
 							</button>
-							<button className="header__sign header__sign--in">
-								<Link to="/signin">Zaloguj</Link>
-							</button>
-							<button className="header__sign header__sign--up">
-								<Link to="/signup">Zarejestruj</Link>
-							</button>
+							<Link to="/signin">
+								<button className="header__sign header__sign--in">
+									Log In
+								</button>
+								{/* semantycznie ten bytton jest tutaj raczej zjebany */}
+							</Link>
+
+							<Link to="/signup">
+								<button className="header__sign header__sign--up">
+									Sign Up
+								</button>
+							</Link>
 						</div>
-					</section>
+					</div>
 				</div>
 			</header>
 		</>

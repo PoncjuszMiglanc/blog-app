@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 const PostInfo = ({ color, padding, margin, post }) => {
 	return (
 		<>
+			{/* cały post z obrazkiem tu będzie i w article */}
 			<div className="info" style={{ color: color, padding: `${padding}px` }}>
 				<div className="info__meta" style={{ marginBottom: `${margin}rem` }}>
 					<span className="info__author">

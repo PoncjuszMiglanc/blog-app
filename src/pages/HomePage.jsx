@@ -38,6 +38,8 @@ const HomePage = () => {
 									if (index == 0) {
 										return (
 											// brudne rozwiązanie, podwojona klasa - muszę poprawić
+											//jeden komponent PostCard albo coś i koniecznie sprawdzić wyświetlanie tego jebanego obrazka
+											//i trzy funkcje na wyświetlanie tych komponentów mogą być filter może nawet użyte
 											<div key={index} className="main-post__picture">
 												<Link key={index} to={`posts/${post._id}`}>
 													<div

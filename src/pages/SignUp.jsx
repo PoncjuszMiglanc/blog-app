@@ -35,7 +35,8 @@ const SignUp = () => {
 		setEmail('');
 		setPassword('');
 	};
-
+	//obiekt z danymi gdzie items to [] a text to {}
+	//albo tak jak jest teraz tylko,że w storze (redux)
 	const items = [
 		{
 			label: 'Nazwa użytkownika',
@@ -65,20 +66,18 @@ const SignUp = () => {
 
 	const cardText = {
 		head: 'Rejestracja',
-		sub: 'Cieszymy się, że chcesz do nas dołączyć. Wyślij formularz kontaktowy i zacznij publikować własne posty:)',
+		sub: 'Cieszymy się, że chcesz do nas dołączyć. Wyślij formularz kontaktowy i zacznij publikować własne posty.',
 		btn: 'Zarejestruj',
 		cta: 'Posiadasz już konto?',
 		invitation: 'Zaloguj się!',
 		link: '/signin',
 		sendData: sendData,
 	};
-	//a tu jest podejście z dodatkowym komponentem w templatce
+
 	return (
-		<>
-			<MainContainer>
-				<FormCard items={items} cardText={cardText} />
-			</MainContainer>
-		</>
+		<MainContainer>
+			<FormCard items={items} cardText={cardText} />
+		</MainContainer>
 	);
 };
 
