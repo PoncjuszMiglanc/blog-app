@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import PostInfo from './PostInfo';
 import '../assets/scss/components/secondary-post.scss';
-// import { Link } from "react-router-dom";
+
 //możliwe, że react context bo przez dwa komponenty leci ten props. ale to później
 const SecondaryPost = ({ post }) => {
 	return (

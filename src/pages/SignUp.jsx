@@ -35,8 +35,7 @@ const SignUp = () => {
 		setEmail('');
 		setPassword('');
 	};
-	//obiekt z danymi gdzie items to [] a text to {}
-	//albo tak jak jest teraz tylko,że w storze (redux)
+
 	const items = [
 		{
 			label: 'Nazwa użytkownika',

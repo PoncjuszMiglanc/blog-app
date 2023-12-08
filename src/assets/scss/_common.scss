@@ -1,0 +1,12 @@
+@use './fonts' as f;
+
+html,
+body {
+	font-family: f.$base-font;
+}
+
+h1,
+h2,
+h3 {
+	font-family: f.$head-font;
+}

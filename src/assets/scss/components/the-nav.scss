@@ -6,7 +6,7 @@
 	padding: 10px 0;
 
 	&__wrapper {
-		width: 1280px;
+		width: 90%;
 		margin: 0 auto;
 		display: flex;
 		align-items: center;
@@ -24,20 +24,20 @@
 		margin: 0 10px;
 	}
 
-	&__logins {
-		display: flex;
-		gap: 15px;
-	}
+	// &__logins {
+	// 	display: flex;
+	// 	gap: 15px;
+	// }
 
-	&__sign {
-		border-radius: 10px;
-		&--in {
-			background-color: rgb(240, 233, 226);
-		}
+	// &__sign {
+	// 	border-radius: 10px;
+	// 	&--in {
+	// 		background-color: rgb(240, 233, 226);
+	// 	}
 
-		&--up {
-			background-color: black;
-			color: white;
-		}
-	}
+	// 	&--up {
+	// 		background-color: black;
+	// 		color: white;
+	// 	}
+	// }
 }

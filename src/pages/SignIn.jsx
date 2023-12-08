@@ -1,8 +1,6 @@
 import { useState } from 'react';
-// import { Link } from 'react-router-dom';
 import MainContainer from '../Components/MainContainer';
 import FormCard from '../Components/FormCard';
-// import InputField from '../Components/InputField';
 
 const SignIn = () => {
 	//redirectem trzba będzie się zająć
@@ -36,6 +34,7 @@ const SignIn = () => {
 		setEmail('');
 		setPass('');
 	};
+
 	const items = [
 		{
 			label: 'Email',
@@ -68,45 +67,6 @@ const SignIn = () => {
 	return (
 		<MainContainer>
 			<FormCard items={items} cardText={cardText} />
-			{/* <div className="card">
-				<div className="card__form">
-					<h1 className="card__header">Logowanie</h1>
-					<p className="card__sub">
-						Cieszymy się, że wróciłeś. Zapraszamy do ponownego zalogowania.
-					</p>
-					<form action="">
-						<InputField
-							key="email"
-							label={'Email'}
-							placeholder={'Podaj adres email'}
-							type={'text'}
-							id={'email'}
-							value={email}
-							setValue={setEmail}
-						/>
-						<InputField
-							key="pass"
-							label={'Hasło'}
-							placeholder={'Podaj hasło'}
-							type={'text'}
-							id={'pass'}
-							value={pass}
-							setValue={setPass}
-						/>
-						<button onClick={handler} className="card__btn">
-							Zaloguj
-						</button>
-					</form>
-
-					<div className="card__divider">lub</div>
-					<p className="card__sub">
-						Nie masz jeszcze konta?
-						<span className="card__sub-login">
-							<Link to="/signup">Załóż konto za darmo!</Link>
-						</span>
-					</p>
-				</div>
-			</div> */}
 		</MainContainer>
 	);
 };
