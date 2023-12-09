@@ -11,10 +11,8 @@ html {
 	-webkit-text-size-adjust: 100%;
 }
 
-//być może dam commmon jeszcze
 body {
 	background-color: v.$background-gray;
-	// width: 100%;
 }
 
 input {
@@ -42,8 +40,13 @@ ul {
 
 a {
 	text-decoration: none;
+	color: inherit;
 }
 
 a:visited {
 	color: inherit;
+}
+
+img {
+	display: block;
 }

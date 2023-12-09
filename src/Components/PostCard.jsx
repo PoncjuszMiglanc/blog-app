@@ -7,40 +7,39 @@ const PostCard = ({ post, style }) => {
 	return (
 		<article className="post-card" style={style}>
 			<Link to={`/posts/${post._id}`}>
-				<img className="post-card__image" src={pic} alt="screenshot" />
-
-				<div className="info">
-					<div className="info__meta">
-						<span className="info__author">
-							<a href="">{!post ? '' : post.author}</a>
-						</span>
-						<span className="info__separator"></span>
-						<span className="info__date">
-							<a href="">
-								<time
-									dateTime={
-										!post
+				<div className="post-card__wrap">
+					<div className="post-card__content">
+						<img className="info__image" src={pic} alt="screenshot" />
+						<div className="info__head">
+							<div className="info__meta">
+								<span className="info__author">
+									<a href="">{!post ? '' : post.author}</a>
+								</span>
+								<span className="info__separator"></span>
+								<span className="info__date">
+									<time
+										dateTime={
+											!post
+												? ''
+												: new Date(post.createdAt).toLocaleDateString('en-GB')
+										}
+									>
+										{!post
 											? ''
-											: new Date(post.createdAt).toLocaleDateString('en-GB')
-									}
-								>
-									{!post
-										? ''
-										: new Date(post.createdAt).toLocaleDateString('pl-PL', {
-												month: 'long',
-												year: 'numeric',
-												day: 'numeric',
-										  })}
-								</time>
-							</a>
-						</span>
+											: new Date(post.createdAt).toLocaleDateString('pl-PL', {
+													month: 'long',
+													year: 'numeric',
+													day: 'numeric',
+											  })}
+									</time>
+								</span>
+							</div>
+							<h2 className="info__title">{!post ? '' : post.title}</h2>
+							<p className="info__sub">
+								{!post ? '' : `${post.lead.substring(1, 100)}...`}
+							</p>
+						</div>
 					</div>
-					{/* to meta musi byc komponentem, ale to później */}
-					{/* tak zbinduję styl chyba style={{ marginBottom: `${margin}rem` */}
-					<h2 className="info__title">{!post ? '' : post.title}</h2>
-					<p className="info__sub">
-						{!post ? '' : `${post.lead.substring(1, 100)}...`}
-					</p>
 					<div className="info__tags">
 						<span className="info__tag">
 							<a href="">Film</a>
