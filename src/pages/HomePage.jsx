@@ -56,6 +56,7 @@ const HomePage = () => {
 										key={index}
 										post={post}
 										style={{ gridColumn: 'span 2', gridRow: '2 / span 2' }}
+										imgsize={400}
 									/>
 								);
 							} else {

@@ -1,38 +1,45 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import '../assets/scss/components/post-card.scss';
-import pic from '../assets/pic1.jpg';
+// import pic from '../assets/pic1.jpg';
 
-const PostCard = ({ post, style }) => {
+const PostCard = ({ post, style, imgsize }) => {
 	return (
 		<article className="post-card" style={style}>
 			<Link to={`/posts/${post._id}`}>
 				<div className="post-card__wrap">
 					<div className="post-card__content">
-						<img className="info__image" src={pic} alt="screenshot" />
+						<img
+							className="info__image"
+							src={`http://localhost:8080/images/${post.image}`}
+							alt="screenshot"
+							style={{ height: `${imgsize}px` }}
+						/>
 						<div className="info__head">
 							<div className="info__meta">
-								<span className="info__author">
-									<a href="">{!post ? '' : post.author}</a>
-								</span>
+								<p className="info__author">
+									{/* <a href="">{!post ? '' : post.author}</a> */}
+									{!post ? '' : post.author}
+								</p>
 								<span className="info__separator"></span>
-								<span className="info__date">
-									<time
-										dateTime={
-											!post
-												? ''
-												: new Date(post.createdAt).toLocaleDateString('en-GB')
-										}
-									>
-										{!post
+								{/* <span className="info__date"> */}
+								<time
+									className="info__date"
+									dateTime={
+										!post
 											? ''
-											: new Date(post.createdAt).toLocaleDateString('pl-PL', {
-													month: 'long',
-													year: 'numeric',
-													day: 'numeric',
-											  })}
-									</time>
-								</span>
+											: new Date(post.createdAt).toLocaleDateString('en-GB')
+									}
+								>
+									{!post
+										? ''
+										: new Date(post.createdAt).toLocaleDateString('pl-PL', {
+												month: 'long',
+												year: 'numeric',
+												day: 'numeric',
+										  })}
+								</time>
+								{/* </span> */}
 							</div>
 							<h2 className="info__title">{!post ? '' : post.title}</h2>
 							<p className="info__sub">
@@ -63,6 +70,7 @@ const PostCard = ({ post, style }) => {
 PostCard.propTypes = {
 	post: PropTypes.object,
 	style: PropTypes.object,
+	imgsize: PropTypes.number,
 };
 
 export default PostCard;
