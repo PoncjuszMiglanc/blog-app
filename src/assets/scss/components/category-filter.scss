@@ -1,0 +1,55 @@
+@use "../variables" as v;
+
+.category-filter {
+  // background-color: rgb(204, 204, 167);
+  margin-top: 70px;
+  position: relative;
+
+  &__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid v.$gray;
+    padding: 20px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__title {
+    &:hover {
+      color: v.$gray;
+    }
+  }
+
+  &__icon {
+    transition: all ease 0.5s;
+  }
+
+  .rotate {
+    transform: rotate(-180deg);
+  }
+
+  &__dropdown {
+    position: absolute;
+    background-color: white;
+    border-radius: 8px;
+    padding: 0 20px;
+    box-shadow: 0 3px 12px 0 #ebebeb;
+    width: 100%;
+
+    ul li {
+      padding: 20px 0;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid v.$soft-light;
+      }
+
+      &:hover {
+        color: v.$gray;
+        cursor: pointer;
+      }
+    }
+  }
+}

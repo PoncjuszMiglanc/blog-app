@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
-// import { Link } from 'react-router-dom';
 import MainContainer from "../Components/MainContainer";
 import PostCard from "../Components/PostCard";
-// import SecondaryPost from '../Components/SecondaryPost';
-// import PostInfo from '../Components/PostInfo';
+import CategoryFilter from "../Components/CategoryFilter";
+import TheSubscribe from "../Components/TheSubscribe";
 import "../assets/scss/pages/home-page.scss";
 
 const HomePage = () => {
@@ -29,7 +28,7 @@ const HomePage = () => {
   return (
     <MainContainer>
       <section className="grid">
-        <div className="grid__heading">
+        <div className="grid__heading heading">
           <h1 className="grid__title" onClick={console.log(postList)}>
             Filmowy blog
           </h1>
@@ -37,17 +36,11 @@ const HomePage = () => {
             Teksty najlepszych krytyków codziennie
           </p>
         </div>
-        <aside className="grid__sidebar">
-          <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-            <li>6</li>
-            <li>7</li>
-            <li>8</li>
-          </ul>
+        <aside className="grid__sidebar sidebar">
+          <CategoryFilter />
+          <TheSubscribe />
+          <div className="sidebar__most-popular"></div>
+          {/* most-popular to będzie komponent raczy */}
         </aside>
         {postList == null
           ? ""
@@ -66,42 +59,6 @@ const HomePage = () => {
               }
             })}
       </section>
-      {/* <section className="main-post">
-				<h1 className="main-post__header">Tytuł całego bloga</h1>
-				<p className="main-post__subheader">Podtytuł mojego bloga</p>
-				<div className="main-post__view">
-					<div className="main-post__list">
-						{postList == null
-							? ''
-							: postList.map((post, index) => {
-									if (index == 0) {
-										return (
-											// brudne rozwiązanie, podwojona klasa - muszę poprawić
-											//jeden komponent PostCard albo coś i koniecznie sprawdzić wyświetlanie tego jebanego obrazka
-											<div key={index} className="main-post__picture">
-												<Link key={index} to={`posts/${post._id}`}>
-													<div
-														className="main-post__picture"
-														style={{
-															backgroundImage: `url("http://localhost:8080/images/${post.image}")`,
-														}}
-													>
-														<PostInfo
-															color={'rgb(236, 233, 233)'}
-															padding={30}
-															margin={1}
-															post={post}
-														/>
-													</div>
-												</Link>
-											</div>
-										);
-									}
-									return <SecondaryPost key={post._id} post={post} />;
-							  })}
-					</div>
-				</div>
-			</section> */}
     </MainContainer>
   );
 };

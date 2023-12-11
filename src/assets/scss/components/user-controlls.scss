@@ -1,25 +1,25 @@
 .controlls {
-	display: flex;
-	gap: 15px;
+  display: flex;
+  gap: 15px;
 
-	&__btn {
-		border-radius: 8px;
-		background-color: white;
-		font-weight: 600;
+  &__btn {
+    border-radius: 4px;
+    background-color: white;
+    font-weight: 600;
 
-		&:hover {
-			color: grey;
-		}
+    &:hover {
+      color: grey;
+    }
 
-		&--sign-up {
-			background-color: black;
-			color: white;
-			font-weight: 400;
+    &--sign-up {
+      background-color: black;
+      color: white;
+      font-weight: 400;
 
-			&:hover {
-				background-color: rgb(61, 60, 60);
-				color: white;
-			}
-		}
-	}
+      &:hover {
+        background-color: rgb(61, 60, 60);
+        color: white;
+      }
+    }
+  }
 }

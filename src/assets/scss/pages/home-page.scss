@@ -20,56 +20,11 @@
     font-size: 2rem;
   }
 
-  &__sidebar {
+  .sidebar {
     grid-column: 3;
     grid-row: span 3;
-    background-color: olive;
+    // background-color: olive;
+    display: flex;
+    flex-direction: column;
   }
 }
-
-// .main-post {
-// 	// max-width: 1280px;
-// 	// margin: 0 auto;
-// 	text-align: center;
-// 	letter-spacing: 0.5px;
-// 	color: rgb(35, 35, 35);
-// 	background-color: pink;
-// 	//hello goodbye@gmail.com
-// 	&__header {
-// 		font-size: 3.3rem;
-// 		margin-bottom: 1rem;
-// 		letter-spacing: 0.6px;
-// 	}
-
-// 	&__subheader {
-// 		font-size: 1.2rem;
-// 		margin-bottom: 3rem;
-// 	}
-
-// 	&__view {
-// 		padding: 30px;
-// 		background-color: red;
-// 	}
-
-// 	&__list {
-// 		background-color: rgb(123, 200, 138);
-// 		// height: 600px;
-// 		display: grid;
-// 		grid-template-columns: repeat(3, 1fr);
-// 		grid-template-rows: auto;
-// 		gap: 20px;
-// 	}
-
-// 	&__picture {
-// 		// background-image: url("../assets/pic1.jpg");
-// 		background-size: cover;
-// 		background-repeat: no-repeat;
-// 		background-position: center;
-// 		height: 600px;
-// 		display: flex;
-// 		flex-direction: column;
-// 		justify-content: flex-end;
-// 		margin-bottom: 30px;
-// 		grid-column: 1 / 4;
-// 	}
-// }

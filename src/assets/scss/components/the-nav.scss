@@ -1,43 +1,26 @@
-@use '../variables' as v;
+@use "../variables" as v;
 
 .header {
-	width: 100%;
-	background-color: v.$white;
-	padding: 10px 0;
+  width: 100%;
+  background-color: v.$white;
+  padding: 10px 0;
 
-	&__wrapper {
-		width: 90%;
-		margin: 0 auto;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
+  &__wrapper {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-	&__panel {
-		display: flex;
-		align-items: center;
-		gap: 30px;
-	}
+  &__panel {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
 
-	&__list-item {
-		display: inline-block;
-		margin: 0 10px;
-	}
-
-	// &__logins {
-	// 	display: flex;
-	// 	gap: 15px;
-	// }
-
-	// &__sign {
-	// 	border-radius: 10px;
-	// 	&--in {
-	// 		background-color: rgb(240, 233, 226);
-	// 	}
-
-	// 	&--up {
-	// 		background-color: black;
-	// 		color: white;
-	// 	}
-	// }
+  &__list-item {
+    display: inline-block;
+    margin: 0 10px;
+  }
 }
