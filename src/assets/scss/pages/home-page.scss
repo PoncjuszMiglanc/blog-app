@@ -1,22 +1,30 @@
+@use "../variables" as v;
+
 .grid {
-	width: 100%;
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: auto 500px;
-	gap: 20px;
-	// background-color: pink;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto 500px;
+  gap: 20px;
 
-	&__heading {
-		grid-column: span 3;
-		background-color: pink;
-		// padding: 10px;
-	}
+  &__heading {
+    grid-column: span 2;
+    // background-color: pink;
+  }
 
-	&__sidebar {
-		grid-column: 3;
-		grid-row: span 2;
-		background-color: olive;
-	}
+  &__title {
+    font-size: 5.1rem;
+  }
+
+  &__subtitle {
+    font-size: 2rem;
+  }
+
+  &__sidebar {
+    grid-column: 3;
+    grid-row: span 3;
+    background-color: olive;
+  }
 }
 
 // .main-post {
