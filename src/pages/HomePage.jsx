@@ -3,6 +3,7 @@ import MainContainer from "../Components/MainContainer";
 import PostCard from "../Components/PostCard";
 import CategoryFilter from "../Components/CategoryFilter";
 import TheSubscribe from "../Components/TheSubscribe";
+import MostPopular from "../Components/MostPopular";
 import "../assets/scss/pages/home-page.scss";
 
 const HomePage = () => {
@@ -39,8 +40,7 @@ const HomePage = () => {
         <aside className="grid__sidebar sidebar">
           <CategoryFilter />
           <TheSubscribe />
-          <div className="sidebar__most-popular"></div>
-          {/* most-popular to będzie komponent raczy */}
+          <MostPopular />
         </aside>
         {postList == null
           ? ""

@@ -1,12 +1,11 @@
-@use './fonts' as f;
+@use "./fonts" as f;
 
 html,
 body {
-	font-family: f.$base-font;
+  font-family: f.$base-font;
 }
 
 h1,
-h2,
-h3 {
-	font-family: f.$head-font;
+h2 {
+  font-family: f.$head-font;
 }
