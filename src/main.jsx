@@ -6,8 +6,9 @@ import "./assets/scss/main.scss";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { fab } from "@fortawesome/free-brands-svg-icons";
 
-library.add(faAngleDown);
+library.add(faAngleDown, fab);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
