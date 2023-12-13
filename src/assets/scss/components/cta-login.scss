@@ -1,0 +1,42 @@
+.cta {
+  // background-color: rgb(218, 172, 87);
+  margin: 100px 0;
+  height: 500px;
+  display: flex;
+  // gap: 20px;
+
+  &__log-in {
+    background-color: white;
+    width: 50%;
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-size: 4.5rem;
+    margin-bottom: 20px;
+  }
+
+  &__paragraph {
+    font-size: 1.5rem;
+  }
+
+  &__btn {
+    background-color: black;
+    border: 2px solid black;
+    border-radius: 4px;
+    color: white;
+    // width: 50%;
+
+    &:hover {
+      background-color: rgb(61, 60, 60);
+    }
+  }
+
+  &__image {
+    width: 50%;
+    object-fit: cover;
+  }
+}

@@ -5,6 +5,8 @@ import CategoryFilter from "../Components/CategoryFilter";
 import TheSubscribe from "../Components/TheSubscribe";
 import MostPopular from "../Components/MostPopular";
 import TheSocials from "../Components/TheSocials";
+import CtaLogin from "../Components/CtaLogin";
+import TheSlider from "../Components/TheSlider";
 import "../assets/scss/pages/home-page.scss";
 
 const HomePage = () => {
@@ -60,6 +62,8 @@ const HomePage = () => {
               }
             })}
       </section>
+      <CtaLogin />
+      <TheSlider />
       <TheSocials />
     </MainContainer>
   );

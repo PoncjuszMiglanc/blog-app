@@ -9,21 +9,20 @@
   padding: 40px 0;
 
   &__title {
-    font-size: 3rem;
-    font-weight: 400;
+    font-size: 2rem;
     margin-bottom: 20px;
   }
 
   &__paragraph {
-    font-size: 1.2rem;
-    margin-bottom: 40px;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
   }
 
   &__icons {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 40%;
+    width: 30%;
   }
 
   &__link {
