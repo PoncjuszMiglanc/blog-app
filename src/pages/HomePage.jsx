@@ -6,7 +6,7 @@ import TheSubscribe from "../Components/TheSubscribe";
 import MostPopular from "../Components/MostPopular";
 import TheSocials from "../Components/TheSocials";
 import CtaLogin from "../Components/CtaLogin";
-import TheSlider from "../Components/TheSlider";
+import TheCarousel from "../Components/TheCarousel";
 import "../assets/scss/pages/home-page.scss";
 
 const HomePage = () => {
@@ -63,7 +63,7 @@ const HomePage = () => {
             })}
       </section>
       <CtaLogin />
-      <TheSlider />
+      <TheCarousel />
       <TheSocials />
     </MainContainer>
   );

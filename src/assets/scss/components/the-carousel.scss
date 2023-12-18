@@ -1,0 +1,38 @@
+@use "../variables" as v;
+
+.slider-wrapper {
+  position: relative;
+  &__btn {
+    position: absolute;
+    height: 50px;
+    background-color: transparent;
+    transition: all ease 0.3s;
+    &:hover {
+      color: v.$gray;
+    }
+
+    &--dalej {
+      top: 45%;
+      left: -90px;
+    }
+
+    &--cofej {
+      top: 45%;
+      right: -90px;
+    }
+  }
+}
+
+.slider {
+  margin: 100px 0;
+  height: 500px;
+  width: 100%;
+  overflow: hidden;
+
+  &__container {
+    display: flex;
+    height: 500px;
+    width: 100%;
+    transition: all ease 0.3s;
+  }
+}

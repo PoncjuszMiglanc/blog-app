@@ -11,9 +11,9 @@ const CtaLogin = () => {
         </div>
         <button className="cta__btn">Dołącz</button>
       </div>
-      {/* <div className="cta__image">
-      </div> */}
-      <img className="cta__image" src={pic} alt="" />
+      <div className="cta__pic">
+        <img className="cta__image" src={pic} alt="" />
+      </div>
     </section>
   );
 };
