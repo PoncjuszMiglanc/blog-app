@@ -18,4 +18,16 @@
     align-items: center;
     gap: 30px;
   }
+
+  &__login-panel {
+    width: 100%;
+    background-color: black;
+    padding: 5px;
+    text-align: center;
+  }
+
+  &__auth-link {
+    color: white !important ;
+    margin: 0 5px;
+  }
 }

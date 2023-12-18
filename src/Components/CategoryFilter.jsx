@@ -27,13 +27,6 @@ const CategoryFilter = () => {
       ) : (
         ""
       )}
-      {/* <div className="category-filter__dropdown">
-        <ul>
-          <li>Recenzja</li>
-          <li>Artykuł</li>
-          <li>Esej</li>
-        </ul>
-      </div> */}
     </div>
   );
 };

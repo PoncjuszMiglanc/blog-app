@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
+import { useAuth } from "../Hooks/AuthHooks";
 import UserControlls from "./UserControlls";
 import NavLinks from "./NavLinks";
 import "../assets/scss/components/the-nav.scss";
 
 const TheNav = () => {
+  const { isLoggedIn } = useAuth();
+
   return (
     <>
       <header className="header">
@@ -15,6 +18,18 @@ const TheNav = () => {
           </div>
         </div>
       </header>
+      {isLoggedIn ? (
+        <div className="header__login-panel">
+          <Link to="#" className="header__auth-link">
+            Mój Profil
+          </Link>
+          <Link to="/posts/create" className="header__auth-link">
+            Dodaj Post
+          </Link>
+        </div>
+      ) : (
+        ""
+      )}
     </>
   );
 };

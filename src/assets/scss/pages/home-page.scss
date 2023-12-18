@@ -9,7 +9,6 @@
 
   &__heading {
     grid-column: span 2;
-    // background-color: pink;
   }
 
   &__title {
@@ -23,7 +22,6 @@
   .sidebar {
     grid-column: 3;
     grid-row: span 3;
-    // background-color: olive;
     display: flex;
     flex-direction: column;
   }

@@ -5,11 +5,11 @@ const NavLinks = () => {
   const links = [
     { anhor: "About", path: "#" },
     { anhor: "Kontakt", path: "#" },
-    { anhor: "Coś", path: "#" },
+    // { anhor: "Coś", path: "#" },
     { anhor: "Kategorie", path: "#" },
-    { anhor: "Post", path: "posts/1" },
-    { anhor: "Nowy", path: "/posts/create" },
-    { anhor: "Bamba", path: "#" },
+    // { anhor: "Post", path: "posts/1" },
+    // { anhor: "Nowy", path: "/posts/create" },
+    // { anhor: "Bamba", path: "#" },
   ];
 
   return (

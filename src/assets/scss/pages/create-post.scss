@@ -8,7 +8,6 @@
 }
 
 .category {
-  // background-color: pink;
   width: 400px;
   margin: 0 auto;
   margin-bottom: 1rem;
@@ -31,7 +30,6 @@
 }
 
 .photo {
-  // background-color: blue;
   width: 400px;
   margin: 0 auto;
   margin-bottom: 1rem;
@@ -55,7 +53,6 @@
     padding: 10px 20px;
     border-radius: 10px;
     border: 2px solid rgb(223, 220, 220);
-    // font-size: 1rem;
   }
 
   &__input::file-selector-button:hover {
@@ -68,7 +65,6 @@
   width: 400px;
   margin: 0 auto;
   margin-bottom: 1rem;
-  // background-color: pink;
 
   &__label {
     display: block;
@@ -84,5 +80,26 @@
     border-radius: 10px;
     font-size: 1rem;
     border: 2px solid rgb(223, 220, 220);
+  }
+}
+
+.input {
+  width: 400px;
+  margin: 0 auto 1rem auto;
+
+  &__label {
+    display: block;
+    text-align: left;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+  }
+
+  &__field {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid rgb(223, 220, 220);
+    font-size: 1rem;
   }
 }
