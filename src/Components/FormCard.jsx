@@ -14,7 +14,6 @@ const FormCard = ({ items, cardText }) => {
           <form action="">
             {items.map((item) => {
               return (
-                //usuwam ten komponent (z tego komponentu narazie) i daje zwyklego htmla do pętli
                 //form kard bedzie jeszcze do logout tylko bez inputow i z innym tekstem
                 <div className="input" key={item.id}>
                   <label className="input__label" htmlFor={item.id}>

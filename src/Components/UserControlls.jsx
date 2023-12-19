@@ -1,9 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../Hooks/AuthHooks";
 import "../assets/scss/components/user-controlls.scss";
 
 const UserControlls = () => {
   const { isLoggedIn, logOut } = useAuth();
+
+  const navigate = useNavigate();
 
   const logOutHandler = (e) => {
     e.preventDefault();
@@ -25,7 +27,7 @@ const UserControlls = () => {
       });
 
     logOut();
-    //przekierowanie do strony głównej
+    navigate("/logout");
   };
   return (
     <div className="controlls">

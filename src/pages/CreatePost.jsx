@@ -1,7 +1,34 @@
 import { useState } from "react";
+import ReactQuill from "react-quill";
 import MainContainer from "../Components/MainContainer";
-// import InputField from '../Components/InputField';
+import "react-quill/dist/quill.snow.css";
 import "../assets/scss/pages/create-post.scss";
+
+const modules = {
+  toolbar: [
+    [{ header: "1" }, { header: "2" }],
+    ["bold", "italic", "underline", "strike", "blockquote"],
+    [{ list: "ordered" }, { list: "bullet" }],
+    ["link", "image", "video"],
+    ["clean"],
+  ],
+};
+
+const formats = [
+  "header",
+  "font",
+  "size",
+  "bold",
+  "italic",
+  "underline",
+  "strike",
+  "blockquote",
+  "list",
+  "bullet",
+  "link",
+  "image",
+  "video",
+];
 
 const CreatePost = () => {
   //chcę, żeby to było szersze, ale to potem
@@ -12,6 +39,7 @@ const CreatePost = () => {
   const [autor, setAutor] = useState("");
   const [image, setImage] = useState("");
   const [treść, setTreść] = useState("");
+  const [content, setContent] = useState("");
 
   const createPost = (e) => {
     e.preventDefault();
@@ -75,14 +103,6 @@ const CreatePost = () => {
               </option>
             </select>
           </div>
-          {/* <InputField
-						label={'Tytuł'}
-						type={'text'}
-						placeholder={'Wpisz tytuł tekstu'}
-						id={'tytuł'}
-						value={tytuł}
-						setValue={setTytuł}
-					/> */}
           <div className="input">
             <label className="input__label" htmlFor="tytuł">
               Tytuł
@@ -110,14 +130,6 @@ const CreatePost = () => {
               onChange={(e) => setLead(e.target.value)}
             ></textarea>
           </div>
-          {/* <InputField
-						label={'Autor'}
-						type={'text'}
-						placeholder={'Nazwa autora wpisu'}
-						id={'autor'}
-						value={autor}
-						setValue={setAutor}
-					/> */}
           <div className="input">
             <label className="input__label" htmlFor="autor">
               Autor
@@ -156,7 +168,20 @@ const CreatePost = () => {
               onChange={(e) => setTreść(e.target.value)}
             ></textarea>
           </div>
-          <button className="card__btn">Opublikuj</button>
+          <div className="quill-container">
+            <ReactQuill
+              className="quill-container__my-editor"
+              value={content}
+              onChange={setContent}
+              modules={modules}
+              formats={formats}
+            />
+          </div>
+
+          {/* <div className="lead">
+            <button>TeSt</button>
+          </div> */}
+          <button className="create__btn">Opublikuj</button>
         </form>
       </div>
     </MainContainer>

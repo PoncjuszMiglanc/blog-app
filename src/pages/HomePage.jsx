@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
+import { useAllPosts } from "../Hooks/PostsHooks";
 import MainContainer from "../Components/MainContainer";
 import PostCard from "../Components/PostCard";
 import CategoryFilter from "../Components/CategoryFilter";
@@ -10,24 +11,26 @@ import TheCarousel from "../Components/TheCarousel";
 import "../assets/scss/pages/home-page.scss";
 
 const HomePage = () => {
-  const [postList, setPostList] = useState([]);
+  // const [postList, setPostList] = useState([]);
 
-  const getPostList = () => {
-    fetch("http://localhost:8080/posts")
-      .then((res) => {
-        return res.json();
-      })
-      .then((res) => {
-        setPostList(res.posty.reverse());
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+  // const getPostList = () => {
+  //   fetch("http://localhost:8080/posts")
+  //     .then((res) => {
+  //       return res.json();
+  //     })
+  //     .then((res) => {
+  //       setPostList(res.posty.reverse());
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
 
-  useEffect(() => {
-    getPostList();
-  }, []);
+  // useEffect(() => {
+  //   getPostList();
+  // }, []);
+
+  const postList = useAllPosts();
 
   return (
     <MainContainer>
