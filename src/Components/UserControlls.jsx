@@ -33,16 +33,16 @@ const UserControlls = () => {
     <div className="controlls">
       {isLoggedIn ? (
         <Link to="/" onClick={logOutHandler}>
-          <button className="controlls__btn">Log Out</button>
+          <button className="controlls__btn">Wyloguj się</button>
         </Link>
       ) : (
         <Link to="/signin">
-          <button className="controlls__btn">Log In</button>
+          <button className="controlls__btn">Zaloguj się</button>
         </Link>
       )}
       <Link to="/signup">
         <button className="controlls__btn controlls__btn--sign-up">
-          Sign Up
+          Załóż konto
         </button>
       </Link>
     </div>

@@ -1,4 +1,3 @@
-// import { useState, useEffect } from "react";
 import { useAllPosts } from "../Hooks/PostsHooks";
 import MainContainer from "../Components/MainContainer";
 import PostCard from "../Components/PostCard";
@@ -11,25 +10,6 @@ import TheCarousel from "../Components/TheCarousel";
 import "../assets/scss/pages/home-page.scss";
 
 const HomePage = () => {
-  // const [postList, setPostList] = useState([]);
-
-  // const getPostList = () => {
-  //   fetch("http://localhost:8080/posts")
-  //     .then((res) => {
-  //       return res.json();
-  //     })
-  //     .then((res) => {
-  //       setPostList(res.posty.reverse());
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
-
-  // useEffect(() => {
-  //   getPostList();
-  // }, []);
-
   const postList = useAllPosts();
 
   return (

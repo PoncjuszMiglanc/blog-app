@@ -87,7 +87,8 @@
   &__up {
     font-weight: bold;
     text-align: center;
-    margin: 20px 0;
+    margin: 60px 0;
+    text-shadow: 2px 2px 4px rgba(41, 40, 40, 0.3);
   }
 
   &__wrapper {
@@ -101,5 +102,6 @@
     text-align: right;
     margin: 20px 0;
     font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(41, 40, 40, 0.3);
   }
 }

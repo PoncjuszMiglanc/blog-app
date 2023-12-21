@@ -20,12 +20,25 @@ const TheNav = () => {
       </header>
       {isLoggedIn ? (
         <div className="header__login-panel">
-          <Link to="#" className="header__auth-link">
-            Mój Profil
-          </Link>
-          <Link to="/posts/create" className="header__auth-link">
-            Dodaj Post
-          </Link>
+          <p className="header__greet">
+            witaj
+            <span className="header__username">Wojciech</span>
+          </p>
+          <div className="header__options">
+            <Link to="#" className="header__auth-link">
+              mój profil
+            </Link>
+            <Link to="/posts/create" className="header__auth-link">
+              dodaj post
+            </Link>
+            <Link to="#" className="header__auth-link">
+              coś tam
+            </Link>
+            <Link to="#" className="header__auth-link">
+              jakaś opcja
+            </Link>
+          </div>
+          <span className="header__status">jesteś zalogowany</span>
         </div>
       ) : (
         ""

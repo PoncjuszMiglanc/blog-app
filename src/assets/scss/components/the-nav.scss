@@ -22,12 +22,37 @@
   &__login-panel {
     width: 100%;
     background-color: black;
-    padding: 5px;
-    text-align: center;
+    padding: 10px;
+    display: flex;
+    // flex-direction: column;
+
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+    justify-content: space-evenly;
+  }
+
+  &__greet {
+    color: white;
+    font-weight: bold;
+  }
+
+  &__username {
+    margin-left: 10px;
+    color: rgb(46, 164, 207);
+  }
+
+  &__status {
+    color: rgb(238, 183, 192);
+    border: 2px solid rgb(238, 183, 192);
+    border-radius: 8px;
+    padding: 3px;
   }
 
   &__auth-link {
-    color: white !important ;
-    margin: 0 5px;
+    color: rgb(176, 152, 224) !important ;
+    font-weight: bold;
+    margin: 0 20px;
   }
 }

@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useAllPosts } from "../Hooks/PostsHooks";
 import MainContainer from "../Components/MainContainer";
 import PostMiniature from "../Components/PostMiniature";
+import PostOptions from "../Components/PostOptions";
 import "../assets/scss/pages/blog-post.scss";
 
 const BlogPost = () => {
@@ -80,10 +81,17 @@ const BlogPost = () => {
         )}
         <div className="blog-post__content">
           <div className="blog-post__lead">
-            <p>{!post ? "" : post.post.content}</p>
+            {/* <p>{!post ? "" : post.post.content}</p> */}
+            {/* dla każdego h1,h2 w tym divie nieco osobne style w common */}
+            {!post ? (
+              ""
+            ) : (
+              <div dangerouslySetInnerHTML={{ __html: post.post.content }} />
+            )}
           </div>
         </div>
       </div>
+      <PostOptions />
       <div className="other-posts">
         <p className="other-posts__up">pozostałe posty</p>
         <div className="other-posts__wrapper">

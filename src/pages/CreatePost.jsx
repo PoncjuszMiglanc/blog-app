@@ -39,7 +39,7 @@ const CreatePost = () => {
   const [autor, setAutor] = useState("");
   const [image, setImage] = useState("");
   const [treść, setTreść] = useState("");
-  const [content, setContent] = useState("");
+  // const [contentForm, setContentForm] = useState("");
 
   const createPost = (e) => {
     e.preventDefault();
@@ -73,9 +73,9 @@ const CreatePost = () => {
     setAutor("");
     setImage("");
     setTreść("");
-  };
 
-  //tytuł (komponent input), treść (normalny input) nie dochodzą do bazy danych
+    console.log("wysłano");
+  };
 
   return (
     <MainContainer>
@@ -154,7 +154,7 @@ const CreatePost = () => {
               id="photo"
             />
           </div>
-          <div className="lead">
+          {/* <div className="lead">
             <label className="lead__label" htmlFor="lead">
               Treść
             </label>
@@ -167,20 +167,17 @@ const CreatePost = () => {
               value={treść}
               onChange={(e) => setTreść(e.target.value)}
             ></textarea>
-          </div>
+          </div> */}
           <div className="quill-container">
             <ReactQuill
               className="quill-container__my-editor"
-              value={content}
-              onChange={setContent}
+              value={treść}
+              onChange={setTreść}
               modules={modules}
               formats={formats}
             />
           </div>
 
-          {/* <div className="lead">
-            <button>TeSt</button>
-          </div> */}
           <button className="create__btn">Opublikuj</button>
         </form>
       </div>
