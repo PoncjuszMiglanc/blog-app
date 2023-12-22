@@ -19,7 +19,7 @@ const BlogPost = () => {
         return res.json();
       })
       .then((res) => {
-        setPost(res);
+        setPost(res.post);
       })
       .catch((err) => {
         console.log(err);
@@ -34,13 +34,11 @@ const BlogPost = () => {
     <MainContainer>
       <div className="blog-post">
         <div className="blog-post__head">
-          <h1 className="blog-post__title">{!post ? "" : post.post.title}</h1>
-          <p className="blog-post__category">
-            {!post ? "" : post.post.category}
-          </p>
+          <h1 className="blog-post__title">{!post ? "" : post.title}</h1>
+          <p className="blog-post__category">{!post ? "" : post.category}</p>
           <div className="blog-post__meta">
             <span className="blog-post__author">
-              <a href="">{!post ? "" : post.post.author}</a>
+              <a href="">{!post ? "" : post.author}</a>
             </span>
             <span className="blog-post__separator"></span>
             <span className="blog-post__date">
@@ -49,21 +47,16 @@ const BlogPost = () => {
                   dateTime={
                     !post
                       ? ""
-                      : new Date(post.post.createdAt).toLocaleDateString(
-                          "en-GB"
-                        )
+                      : new Date(post.createdAt).toLocaleDateString("en-GB")
                   }
                 >
                   {!post
                     ? ""
-                    : new Date(post.post.createdAt).toLocaleDateString(
-                        "pl-PL",
-                        {
-                          month: "long",
-                          year: "numeric",
-                          day: "numeric",
-                        }
-                      )}
+                    : new Date(post.createdAt).toLocaleDateString("pl-PL", {
+                        month: "long",
+                        year: "numeric",
+                        day: "numeric",
+                      })}
                 </time>
               </a>
             </span>
@@ -75,23 +68,22 @@ const BlogPost = () => {
           <div className="blog-post__img">
             <img
               className="blog-post__pic"
-              src={`http://localhost:8080/images/${post.post.image}`}
+              src={`http://localhost:8080/images/${post.image}`}
             />
           </div>
         )}
         <div className="blog-post__content">
           <div className="blog-post__lead">
-            {/* <p>{!post ? "" : post.post.content}</p> */}
             {/* dla każdego h1,h2 w tym divie nieco osobne style w common */}
             {!post ? (
               ""
             ) : (
-              <div dangerouslySetInnerHTML={{ __html: post.post.content }} />
+              <div dangerouslySetInnerHTML={{ __html: post.content }} />
             )}
           </div>
         </div>
       </div>
-      <PostOptions />
+      <PostOptions postId={post ? post._id : ""} />
       <div className="other-posts">
         <p className="other-posts__up">pozostałe posty</p>
         <div className="other-posts__wrapper">

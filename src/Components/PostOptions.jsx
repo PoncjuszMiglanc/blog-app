@@ -1,14 +1,44 @@
 import { useState } from "react";
-import DeleteModal from "./DeleteModal";
+import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import PropTypes from "prop-types";
+import DeleteModal from "./DeleteModal";
 import "../assets/scss/components/post-options.scss";
 
-const PostOptions = () => {
+const PostOptions = ({ postId }) => {
   const [isVisible, setIsVisible] = useState(false);
+
+  const navigate = useNavigate();
+
+  const deletePost = (e) => {
+    e.preventDefault();
+
+    fetch("http://localhost:8080/deletepost", {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id: postId }),
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    setIsVisible(false);
+    navigate("/");
+  };
 
   return (
     <div className="options">
-      {isVisible ? <DeleteModal setIsVisible={setIsVisible} /> : ""}
+      {isVisible ? (
+        <DeleteModal setIsVisible={setIsVisible} deletePost={deletePost} />
+      ) : (
+        ""
+      )}
       <div className="options__share">
         <a className="options__link" href="https://www.instagram.com/">
           <FontAwesomeIcon icon="fa-brands fa-instagram" size="2x" />
@@ -40,6 +70,10 @@ const PostOptions = () => {
       </div>
     </div>
   );
+};
+
+PostOptions.propTypes = {
+  postId: PropTypes.string.isRequired,
 };
 
 export default PostOptions;
