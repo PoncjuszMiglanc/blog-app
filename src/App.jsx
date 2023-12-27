@@ -9,6 +9,7 @@ import BlogPost from "./pages/BlogPost";
 import CreatePost from "./pages/CreatePost";
 import NotFound from "./pages/NotFound";
 import LogOut from "./pages/LogOut";
+import UpdatePost from "./pages/UpdatePost";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/logout" element={<LogOut />} />
             <Route path="/posts/:id" element={<BlogPost />} />
             <Route path="/posts/create" element={<CreatePost />} />
+            <Route path="/posts/update/:id" element={<UpdatePost />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>

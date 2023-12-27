@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PropTypes from "prop-types";
 import DeleteModal from "./DeleteModal";
@@ -60,7 +60,9 @@ const PostOptions = ({ postId }) => {
         </a>
       </div>
       <div className="options__btns">
-        <button className="options__btn options__btn--edit">edytuj</button>
+        <Link to={`/posts/update/${postId}`}>
+          <button className="options__btn options__btn--edit">edytuj</button>
+        </Link>
         <button
           className="options__btn options__btn--delete"
           onClick={() => setIsVisible(true)}

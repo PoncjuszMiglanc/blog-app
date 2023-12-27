@@ -154,20 +154,6 @@ const CreatePost = () => {
               id="photo"
             />
           </div>
-          {/* <div className="lead">
-            <label className="lead__label" htmlFor="lead">
-              Treść
-            </label>
-            <textarea
-              className="lead__textfield"
-              name=""
-              id="lead"
-              cols="30"
-              rows="6"
-              value={treść}
-              onChange={(e) => setTreść(e.target.value)}
-            ></textarea>
-          </div> */}
           <div className="quill-container">
             <ReactQuill
               className="quill-container__my-editor"
