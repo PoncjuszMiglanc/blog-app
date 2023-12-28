@@ -35,7 +35,7 @@ const UpdatePost = () => {
 
   const [{ category, title, lead, author, content }, setData] = useState({});
 
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState(null);
 
   const handleInput = (e) => {
     const { name, value } = e.target;
@@ -64,52 +64,43 @@ const UpdatePost = () => {
     fetchPost();
   }, []);
 
-  // const updatePost = (e) => {
-  //   e.preventDefault();
+  const updatePost = async (e) => {
+    e.preventDefault();
 
-  //   const formData = new FormData();
-  //   formData.append("category", category);
-  //   formData.append("title", title);
-  //   formData.append("lead", lead);
-  //   formData.append("author", author);
-  //   formData.append("image", image);
-  //   formData.append("content", content);
+    const formData = new FormData();
+    formData.append("category", category);
+    formData.append("title", title);
+    formData.append("lead", lead);
+    formData.append("author", author);
+    formData.append("content", content);
 
-  //   fetch("http://localhost:8080/post", {
-  //     method: "POST",
-  //     body: formData,
-  //     credentials: "include",
-  //   })
-  //     .then((res) => {
-  //       return res.json();
-  //     })
-  //     .then((res) => {
-  //       console.log(res);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
+    if (image) {
+      formData.append("image", image);
+    }
 
-  //   setKategoria("recenzja");
-  //   setTytuł("");
-  //   // setLead("");
-  //   setAutor("");
-  //   // setImage("");
-  //   setTreść("");
+    try {
+      const response = await axios.put(
+        `http://localhost:8080/post/update/${id}`,
+        formData
+      );
+      if (!response) {
+        console.log("Wystąpił błąd");
+      }
 
-  //   console.log("wysłano");
-  // };
+      console.log(response.data);
+    } catch (error) {
+      console.log(`Wystąpił błąd podczas wysyłania danych ${error}`);
+    }
+  };
 
   return (
     <MainContainer>
       <div className="create">
-        <h1 onClick={() => console.log(typeof image)} className="create__title">
-          Edycja Posta
-        </h1>
+        <h1 className="create__title">Edycja Posta</h1>
         <button
           onClick={() =>
             console.log(
-              `przed edycją ${category} ${title} ${lead} ${author} ${image} ${content}`
+              `przed edycją ${category} ${title} ${lead} ${author} ${content}`
             )
           }
         >
@@ -118,13 +109,13 @@ const UpdatePost = () => {
         <button
           onClick={() =>
             console.log(
-              `po edycji ${(category, title, lead, author, image, content)}`
+              `po edycji ${category} ${title} ${lead} ${author} ${content}`
             )
           }
         >
           Po edycji
         </button>
-        <form onSubmit={console.log("hej")}>
+        <form onSubmit={updatePost}>
           <div className="category">
             <label className="category__label" htmlFor="category">
               Kategoria

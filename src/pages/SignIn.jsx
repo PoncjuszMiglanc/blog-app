@@ -27,7 +27,7 @@ const SignIn = () => {
     })
       .then((res) => {
         if (res.status !== 404) {
-          logIn(true);
+          logIn();
         }
         return res.json();
       })
