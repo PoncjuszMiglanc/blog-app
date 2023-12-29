@@ -1,0 +1,130 @@
+.profile {
+  // background-color: orange;
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  // grid-template-rows: repeat(15, 1fr);
+  grid-template-rows: repeat(auto-fill, minnax(100px, 1fr));
+  gap: 20px;
+
+  &__card {
+    // background-color: cyan;
+    grid-row: span 2;
+    // grid-row: 2 / span 2;
+  }
+
+  &__card-wrapper {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 12px 0 #ebebeb;
+    overflow: hidden;
+  }
+
+  &__card-topbar {
+    display: flex;
+    // flex-direction: column;
+    // align-items: center;
+  }
+
+  &__image {
+    height: 200px;
+    width: 200px;
+    // background-color: tan;
+    // padding: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  &__avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__owner {
+    margin: 20px 0 5px 0;
+    font-size: 2.3rem;
+    font-family: sans-serif;
+  }
+
+  &__status {
+    display: block;
+    margin-bottom: 80px;
+  }
+
+  &__about {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.7rem;
+  }
+
+  &__info {
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+  }
+
+  &__summary {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 3px 12px 0 #ebebeb;
+    grid-column: 2 /5;
+    // grid-row: 2;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__header {
+    font-size: 2.2rem;
+    font-weight: 100;
+    margin-bottom: 10px;
+    font-family: sans-serif;
+  }
+
+  &__category {
+    margin: 0 20px;
+  }
+
+  &__posts {
+    // background-color: pink;
+    grid-row: 2;
+    // grid-row: 3;
+    grid-column: 2 /5;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    .element {
+      background-color: white;
+      height: 200px;
+    }
+  }
+}
+
+// .profile {
+//   background-color: orange;
+//   display: grid;
+//   grid-template-columns: repeat(4, 1fr);
+//   gap: 10px;
+//   grid-template-rows: minmax(50px, 1fr);
+
+//   &__card {
+//     background-color: white;
+//     grid-column: span 1;
+//     grid-row: span 5;
+//     // grid-row: 1 / -1;
+//   }
+
+//   &__header {
+//     grid-column: 2 / span 3;
+//     height: 100px;
+//     background-color: green;
+//   }
+
+//   .element {
+//     background-color: pink;
+//     height: 200px;
+//   }
+// }

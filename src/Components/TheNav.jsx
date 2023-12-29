@@ -25,17 +25,17 @@ const TheNav = () => {
             <span className="header__username">Wojciech</span>
           </p>
           <div className="header__options">
-            <Link to="#" className="header__auth-link">
+            <Link to="/profile" className="header__auth-link">
               mój profil
             </Link>
             <Link to="/posts/create" className="header__auth-link">
               dodaj post
             </Link>
             <Link to="#" className="header__auth-link">
-              coś tam
+              edytuj profil
             </Link>
             <Link to="#" className="header__auth-link">
-              jakaś opcja
+              usuń profil
             </Link>
           </div>
           <span className="header__status">jesteś zalogowany</span>
