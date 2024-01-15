@@ -1,0 +1,17 @@
+.info {
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  color: rgb(242, 240, 240);
+  margin-bottom: 10px;
+
+  &__separator {
+    display: inline-block;
+    margin: 0 7px;
+    padding: 2.5px;
+    border-radius: 2.5px;
+    background-color: rgb(242, 240, 240);
+  }
+}

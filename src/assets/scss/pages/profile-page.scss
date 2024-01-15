@@ -1,16 +1,13 @@
 .profile {
-  // background-color: orange;
   margin-top: 100px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  // grid-template-rows: repeat(15, 1fr);
-  grid-template-rows: repeat(auto-fill, minnax(100px, 1fr));
+  // grid-template-rows: repeat(auto-fill, minnax(100px, 1fr));
+  grid-template-rows: repeat(auto-fill, 100px);
   gap: 20px;
 
   &__card {
-    // background-color: cyan;
     grid-row: span 2;
-    // grid-row: 2 / span 2;
   }
 
   &__card-wrapper {
@@ -23,15 +20,11 @@
 
   &__card-topbar {
     display: flex;
-    // flex-direction: column;
-    // align-items: center;
   }
 
   &__image {
     height: 200px;
     width: 200px;
-    // background-color: tan;
-    // padding: 10px;
     border-radius: 8px;
     overflow: hidden;
   }
@@ -69,7 +62,6 @@
     border-radius: 8px;
     box-shadow: 0 3px 12px 0 #ebebeb;
     grid-column: 2 /5;
-    // grid-row: 2;
     height: 100px;
     display: flex;
     flex-direction: column;
@@ -89,12 +81,12 @@
   }
 
   &__posts {
-    // background-color: pink;
     grid-row: 2;
-    // grid-row: 3;
     grid-column: 2 /5;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(auto-fill, 200px);
+    gap: 10px;
 
     .element {
       background-color: white;
@@ -102,29 +94,3 @@
     }
   }
 }
-
-// .profile {
-//   background-color: orange;
-//   display: grid;
-//   grid-template-columns: repeat(4, 1fr);
-//   gap: 10px;
-//   grid-template-rows: minmax(50px, 1fr);
-
-//   &__card {
-//     background-color: white;
-//     grid-column: span 1;
-//     grid-row: span 5;
-//     // grid-row: 1 / -1;
-//   }
-
-//   &__header {
-//     grid-column: 2 / span 3;
-//     height: 100px;
-//     background-color: green;
-//   }
-
-//   .element {
-//     background-color: pink;
-//     height: 200px;
-//   }
-// }

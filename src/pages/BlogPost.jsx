@@ -4,6 +4,7 @@ import { useAllPosts } from "../Hooks/PostsHooks";
 import MainContainer from "../Components/MainContainer";
 import PostMiniature from "../Components/PostMiniature";
 import PostOptions from "../Components/PostOptions";
+import PostInfo from "../Components/PostInfo";
 import "../assets/scss/pages/blog-post.scss";
 
 const BlogPost = () => {
@@ -36,31 +37,7 @@ const BlogPost = () => {
         <div className="blog-post__head">
           <h1 className="blog-post__title">{!post ? "" : post.title}</h1>
           <p className="blog-post__category">{!post ? "" : post.category}</p>
-          <div className="blog-post__meta">
-            <span className="blog-post__author">
-              <a href="">{!post ? "" : post.author}</a>
-            </span>
-            <span className="blog-post__separator"></span>
-            <span className="blog-post__date">
-              <a href="">
-                <time
-                  dateTime={
-                    !post
-                      ? ""
-                      : new Date(post.createdAt).toLocaleDateString("en-GB")
-                  }
-                >
-                  {!post
-                    ? ""
-                    : new Date(post.createdAt).toLocaleDateString("pl-PL", {
-                        month: "long",
-                        year: "numeric",
-                        day: "numeric",
-                      })}
-                </time>
-              </a>
-            </span>
-          </div>
+          <PostInfo item={post} style={"black"} />
         </div>
         {!post ? (
           <p>Nie ma posta</p>
@@ -74,7 +51,6 @@ const BlogPost = () => {
         )}
         <div className="blog-post__content">
           <div className="blog-post__lead">
-            {/* dla każdego h1,h2 w tym divie nieco osobne style w common */}
             {!post ? (
               ""
             ) : (

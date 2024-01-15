@@ -27,23 +27,6 @@
     font-style: italic;
   }
 
-  &__meta {
-    font-weight: 500;
-    font-size: 0.9rem;
-    letter-spacing: 0.5px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    // margin-bottom: 3rem;
-  }
-
-  &__separator {
-    display: inline-block;
-    margin: 0 7px;
-    padding: 2.5px;
-    border-radius: 2.5px;
-    background-color: black;
-  }
   &__img {
     margin: 0 auto;
     width: 80%;

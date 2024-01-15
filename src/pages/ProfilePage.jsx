@@ -1,8 +1,13 @@
 import MainContainer from "../Components/MainContainer";
+import { useAllPosts } from "../Hooks/PostsHooks";
 import "../assets/scss/pages/profile-page.scss";
 import pic from "../assets/pic2.webp";
+import Mini from "../Components/Mini";
 
 const ProfilePage = () => {
+  const postList = useAllPosts();
+  // ostatecznie będzie trzeba przefiltrowac tylko posty wg. autora, który jest zalogowany
+
   return (
     <MainContainer>
       <div className="profile">
@@ -41,6 +46,12 @@ const ProfilePage = () => {
           </div>
         </section>
         <section className="profile__posts">
+          {!postList
+            ? ""
+            : postList.map((item) => {
+                return <Mini key={item._id} item={item} />;
+              })}
+          {/* <article className="element">element</article>
           <article className="element">element</article>
           <article className="element">element</article>
           <article className="element">element</article>
@@ -57,11 +68,7 @@ const ProfilePage = () => {
           <article className="element">element</article>
           <article className="element">element</article>
           <article className="element">element</article>
-          <article className="element">element</article>
-          <article className="element">element</article>
-          <article className="element">element</article>
-          <article className="element">element</article>
-          <article className="element">element</article>
+          <article className="element">element</article> */}
         </section>
       </div>
     </MainContainer>
