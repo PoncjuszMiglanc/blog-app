@@ -35,12 +35,12 @@
 
   &__greet {
     color: white;
-    font-weight: bold;
   }
 
   &__username {
     margin-left: 10px;
     color: rgb(46, 164, 207);
+    font-weight: bold;
   }
 
   &__status {
@@ -52,7 +52,7 @@
 
   &__auth-link {
     color: rgb(176, 152, 224) !important ;
-    font-weight: bold;
+    // font-weight: bold;
     margin: 0 20px;
   }
 }

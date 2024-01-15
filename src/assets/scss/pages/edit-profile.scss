@@ -1,0 +1,69 @@
+@use "../variables" as v;
+
+.edit-card {
+  margin-top: 100px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 3px 12px 0 #ebebeb;
+  transition: all ease 0.3s;
+  padding: 20px;
+
+  &__title {
+    text-align: center;
+    font-family: inherit;
+    font-weight: 400;
+    margin-bottom: 40px;
+  }
+
+  &__form {
+    width: 400px;
+    margin: 0 auto 20px auto;
+  }
+  &__label {
+    display: block;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid rgb(223, 220, 220);
+    background-color: v.$background-gray;
+  }
+
+  &__textarea {
+    border: 2px solid rgb(223, 220, 220);
+    width: 100%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__file {
+    width: 100%;
+
+    &::file-selector-button {
+      border-radius: 4px;
+      background-color: black;
+      color: white;
+
+      &:hover {
+        cursor: pointer;
+        background-color: rgb(61, 60, 60);
+      }
+    }
+  }
+
+  &__btn {
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+
+    &:hover {
+      background-color: rgb(61, 60, 60);
+      color: white;
+    }
+  }
+}

@@ -11,6 +11,7 @@ import NotFound from "./pages/NotFound";
 import LogOut from "./pages/LogOut";
 import UpdatePost from "./pages/UpdatePost";
 import ProfilePage from "./pages/ProfilePage";
+import EditProfile from "./pages/EditProfile";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="/posts/create" element={<CreatePost />} />
             <Route path="/posts/update/:id" element={<UpdatePost />} />
             <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/profile/edit" element={<EditProfile />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -18,7 +18,7 @@ const ProfilePage = () => {
                 <img className="profile__avatar" src={pic} alt="author" />
               </div>
             </div>
-            <h1 className="profile__owner">Imię Nazwisko</h1>
+            <h1 className="profile__owner">{postList[0].author}</h1>
             <span className="profile__status">członek od 12.11.2022</span>
             <span className="profile__about">o mnie</span>
             <p className="profile__info">

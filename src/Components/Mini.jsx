@@ -9,6 +9,10 @@ const Mini = ({ item }) => {
         src={`http://localhost:8080/images/${item.image}`}
         alt="blogpost"
       />
+      <div className="mini__overlay">
+        <span className="mini__category">{item.category}</span>
+        <h3 className="mini__title">{item.title}</h3>
+      </div>
     </div>
   );
 };
