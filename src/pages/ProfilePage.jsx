@@ -3,10 +3,34 @@ import { useAllPosts } from "../Hooks/PostsHooks";
 import "../assets/scss/pages/profile-page.scss";
 import pic from "../assets/pic2.webp";
 import Mini from "../Components/Mini";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const ProfilePage = () => {
   const postList = useAllPosts();
   // ostatecznie będzie trzeba przefiltrowac tylko posty wg. autora, który jest zalogowany
+  const [userData, setUserData] = useState("");
+
+  const { id } = useParams();
+  //request po dane uzytkownika
+
+  useEffect(() => {
+    const getUserData = async () => {
+      try {
+        const response = await axios.get(`http://localhost:8080/user/${id}`);
+        if (response.status >= 200 && response.status < 300) {
+          const { userData } = response.data;
+          setUserData(userData);
+        } else {
+          console.log("Wystąpił błąd podczas pobierania danych użytkownika");
+        }
+      } catch (err) {
+        console.log("wystąpił błąd podczas pobierania danych użytkownika", err);
+      }
+    };
+    getUserData();
+  }, []);
 
   return (
     <MainContainer>
@@ -18,16 +42,26 @@ const ProfilePage = () => {
                 <img className="profile__avatar" src={pic} alt="author" />
               </div>
             </div>
-            <h1 className="profile__owner">{postList[0].author}</h1>
+            <h1 className="profile__owner">
+              {!userData ? "Nazwa Użytkownika" : userData.username}
+            </h1>
             <span className="profile__status">członek od 12.11.2022</span>
-            <span className="profile__about">o mnie</span>
+            <span
+              onClick={() => console.log(userData)}
+              className="profile__about"
+            >
+              o mnie
+            </span>
             <p className="profile__info">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
+              {!userData.about
+                ? `Użytkownik ${userData.username} nie napisał jeszcze nic o sobie. By to zmienić edytuj profil.`
+                : userData.about}
+              {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
               ullam sunt suscipit repellat voluptatem nostrum cupiditate culpa
               necessitatibus, consectetur delectus! Lorem ipsum dolor sit amet
               consectetur, adipisicing elit. Ex, porro magnam? Iure animi ipsum
               ad facilis? Laborum, minus vel quia provident quibusdam, eligendi
-              totam natus architecto laboriosam, nam fugit.
+              totam natus architecto laboriosam, nam fugit. */}
             </p>
           </div>
         </aside>

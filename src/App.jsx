@@ -26,7 +26,7 @@ function App() {
             <Route path="/posts/:id" element={<BlogPost />} />
             <Route path="/posts/create" element={<CreatePost />} />
             <Route path="/posts/update/:id" element={<UpdatePost />} />
-            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/profile/:id" element={<ProfilePage />} />
             <Route path="/profile/edit" element={<EditProfile />} />
           </Route>
           <Route path="*" element={<NotFound />} />

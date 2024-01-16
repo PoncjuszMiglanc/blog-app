@@ -2,41 +2,38 @@ import { useState } from "react";
 import { useAuth } from "../Hooks/AuthHooks";
 import MainContainer from "../Components/MainContainer";
 import FormCard from "../Components/FormCard";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
-  //redirectem trzba będzie się zająć
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
 
   const { isLoggedIn, logIn } = useAuth();
-  //login: marcysia@mail.com
-  //hasło: marcysia666
+  //tutaj podrzucić jeszcze userId dla linka w nawigacji
 
-  const handler = (e) => {
+  const navigate = useNavigate();
+
+  const handler = async (e) => {
     e.preventDefault();
-    fetch("http://localhost:8080/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email,
-        pass,
-      }),
-      credentials: "include",
-    })
-      .then((res) => {
-        if (res.status !== 404) {
-          logIn();
-        }
-        return res.json();
-      })
-      .then((res) => {
-        console.log("to jest respons", res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+
+    try {
+      const response = await axios.post(
+        "http://localhost:8080/login",
+        { email, pass },
+        { withCredentials: true }
+      );
+
+      if (response.status === 200) {
+        logIn();
+        navigate(`/profile/${response.data.userId}`);
+        console.log("zalogowano", response.data.userId);
+      } else {
+        console.log("wystąpił błąd", response.data);
+      }
+    } catch (error) {
+      console.log("nie udało się zalogować", error);
+    }
 
     setEmail("");
     setPass("");
@@ -54,7 +51,7 @@ const SignIn = () => {
     {
       label: "Hasło",
       placeholder: "Podaj hasło",
-      type: "text",
+      type: "password",
       id: "pass",
       setValue: setPass,
       value: pass,

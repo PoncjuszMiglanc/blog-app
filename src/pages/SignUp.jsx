@@ -1,35 +1,35 @@
 import { useState } from "react";
 import MainContainer from "../Components/MainContainer";
 import FormCard from "../Components/FormCard";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const sendData = (e) => {
+  const navigate = useNavigate();
+
+  const sendData = async (e) => {
     e.preventDefault();
 
-    fetch("http://localhost:8080/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
+    try {
+      const response = await axios.post("http://localhost:8080/register", {
         userName,
         email,
         password,
-      }),
-    })
-      .then((res) => {
-        return res.json();
-      })
-      .then((res) => {
-        console.log("Zarejestrowano", res);
-      })
-      .catch((err) => {
-        console.log(err);
       });
+
+      if (response.status >= 200 && response.status < 300) {
+        console.log("wszystko ok, zarejestrowano", response.status);
+        navigate("/");
+      } else {
+        console.log("wystąpił błąd :", response.status);
+      }
+    } catch (error) {
+      console.log(`wystąpił błąd podczas rejestracji ${error}`);
+    }
 
     setUserName("");
     setEmail("");
