@@ -5,7 +5,7 @@ import NavLinks from "./NavLinks";
 import "../assets/scss/components/the-nav.scss";
 
 const TheNav = () => {
-  const { isLoggedIn } = useAuth();
+  const { isLoggedIn, userData } = useAuth();
 
   return (
     <>
@@ -25,7 +25,7 @@ const TheNav = () => {
             <span className="header__username">Wojciech</span>
           </p>
           <div className="header__options">
-            <Link to="/profile" className="header__auth-link">
+            <Link to={`/profile/${userData._id}`} className="header__auth-link">
               mój profil
             </Link>
             <Link to="/posts/create" className="header__auth-link">

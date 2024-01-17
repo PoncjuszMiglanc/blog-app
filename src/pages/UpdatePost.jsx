@@ -48,7 +48,7 @@ const UpdatePost = () => {
       content,
     }));
   };
-
+  //być może dane posta też do stanu
   useEffect(() => {
     const fetchPost = async () => {
       try {

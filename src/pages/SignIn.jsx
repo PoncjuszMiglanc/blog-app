@@ -9,7 +9,7 @@ const SignIn = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
 
-  const { isLoggedIn, logIn } = useAuth();
+  const { isLoggedIn, logIn, getUserData } = useAuth();
   //tutaj podrzucić jeszcze userId dla linka w nawigacji
 
   const navigate = useNavigate();
@@ -26,6 +26,7 @@ const SignIn = () => {
 
       if (response.status === 200) {
         logIn();
+        getUserData(response.data.userId);
         navigate(`/profile/${response.data.userId}`);
         console.log("zalogowano", response.data.userId);
       } else {

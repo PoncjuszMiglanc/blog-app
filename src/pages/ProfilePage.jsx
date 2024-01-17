@@ -3,34 +3,36 @@ import { useAllPosts } from "../Hooks/PostsHooks";
 import "../assets/scss/pages/profile-page.scss";
 import pic from "../assets/pic2.webp";
 import Mini from "../Components/Mini";
-import { useParams } from "react-router-dom";
-import axios from "axios";
-import { useEffect, useState } from "react";
+// import { useParams } from "react-router-dom";
+// import axios from "axios";
+// import { useEffect, useState } from "react";
+import { useAuth } from "../Hooks/AuthHooks";
 
 const ProfilePage = () => {
   const postList = useAllPosts();
   // ostatecznie będzie trzeba przefiltrowac tylko posty wg. autora, który jest zalogowany
-  const [userData, setUserData] = useState("");
+  // const [userData, setUserData] = useState("");
+  const { userData } = useAuth();
 
-  const { id } = useParams();
+  // const { id } = useParams();
   //request po dane uzytkownika
 
-  useEffect(() => {
-    const getUserData = async () => {
-      try {
-        const response = await axios.get(`http://localhost:8080/user/${id}`);
-        if (response.status >= 200 && response.status < 300) {
-          const { userData } = response.data;
-          setUserData(userData);
-        } else {
-          console.log("Wystąpił błąd podczas pobierania danych użytkownika");
-        }
-      } catch (err) {
-        console.log("wystąpił błąd podczas pobierania danych użytkownika", err);
-      }
-    };
-    getUserData();
-  }, []);
+  // useEffect(() => {
+  //   const getUserData = async () => {
+  //     try {
+  //       const response = await axios.get(`http://localhost:8080/user/${id}`);
+  //       if (response.status >= 200 && response.status < 300) {
+  //         const { userData } = response.data;
+  //         setUserData(userData);
+  //       } else {
+  //         console.log("Wystąpił błąd podczas pobierania danych użytkownika");
+  //       }
+  //     } catch (err) {
+  //       console.log("wystąpił błąd podczas pobierania danych użytkownika", err);
+  //     }
+  //   };
+  //   getUserData();
+  // }, []);
 
   return (
     <MainContainer>
@@ -38,6 +40,9 @@ const ProfilePage = () => {
         <aside className="profile__card">
           <div className="profile__card-wrapper">
             <div className="profile__card-topbar">
+              <button onClick={() => console.log(userData.createdAt)}>
+                TEST
+              </button>
               <div className="profile__image">
                 <img className="profile__avatar" src={pic} alt="author" />
               </div>
@@ -45,7 +50,15 @@ const ProfilePage = () => {
             <h1 className="profile__owner">
               {!userData ? "Nazwa Użytkownika" : userData.username}
             </h1>
-            <span className="profile__status">członek od 12.11.2022</span>
+            <span className="profile__status">{`członek od ${
+              !userData
+                ? ""
+                : new Date(userData.createdAt).toLocaleDateString("pl-PL", {
+                    month: "numeric",
+                    year: "numeric",
+                    day: "numeric",
+                  })
+            }`}</span>
             <span
               onClick={() => console.log(userData)}
               className="profile__about"
