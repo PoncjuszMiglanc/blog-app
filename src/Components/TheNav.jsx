@@ -34,7 +34,10 @@ const TheNav = () => {
             <Link to="/profile/edit" className="header__auth-link">
               edytuj profil
             </Link>
-            <Link to="#" className="header__auth-link">
+            <Link
+              to={`/profile/delete/${userData._id}`}
+              className="header__auth-link"
+            >
               usuń profil
             </Link>
           </div>

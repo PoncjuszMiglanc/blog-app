@@ -12,6 +12,7 @@ import LogOut from "./pages/LogOut";
 import UpdatePost from "./pages/UpdatePost";
 import ProfilePage from "./pages/ProfilePage";
 import EditProfile from "./pages/EditProfile";
+import DeleteUser from "./pages/DeleteUser";
 
 function App() {
   return (
@@ -27,7 +28,9 @@ function App() {
             <Route path="/posts/create" element={<CreatePost />} />
             <Route path="/posts/update/:id" element={<UpdatePost />} />
             <Route path="/profile/:id" element={<ProfilePage />} />
+            {/* tuteż zrobić id może wtedy z parametrow wezmiemy id w requescie a nie z kontekstu */}
             <Route path="/profile/edit" element={<EditProfile />} />
+            <Route path="/profile/delete/:id" element={<DeleteUser />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>

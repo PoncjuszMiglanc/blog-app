@@ -1,7 +1,7 @@
 import MainContainer from "../Components/MainContainer";
 import { useAllPosts } from "../Hooks/PostsHooks";
 import "../assets/scss/pages/profile-page.scss";
-import pic from "../assets/pic2.webp";
+// import pic from "../assets/pic2.webp";
 import Mini from "../Components/Mini";
 // import { useParams } from "react-router-dom";
 // import axios from "axios";
@@ -40,11 +40,12 @@ const ProfilePage = () => {
         <aside className="profile__card">
           <div className="profile__card-wrapper">
             <div className="profile__card-topbar">
-              <button onClick={() => console.log(userData.createdAt)}>
-                TEST
-              </button>
               <div className="profile__image">
-                <img className="profile__avatar" src={pic} alt="author" />
+                <img
+                  className="profile__avatar"
+                  src={`http://localhost:8080/images/${userData.avatar}`}
+                  alt="author"
+                />
               </div>
             </div>
             <h1 className="profile__owner">
@@ -82,13 +83,20 @@ const ProfilePage = () => {
           <h2 className="profile__header">moje teksty</h2>
           <div className="profile__categories">
             <a className="profile__category" href="">
-              recenzje (12)
+              recenzje{" "}
+              <span className="profile__number profile__number--recenzja">
+                (12)
+              </span>
             </a>
             <a className="profile__category" href="">
-              artykuły (5)
+              artykuły{" "}
+              <span className="profile__number profile__number--artykul">
+                (5)
+              </span>
             </a>
             <a className="profile__category" href="">
-              eseje (2)
+              eseje{" "}
+              <span className="profile__number profile__number--esej">(2)</span>
             </a>
           </div>
         </section>

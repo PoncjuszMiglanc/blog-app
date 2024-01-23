@@ -37,7 +37,7 @@ const EditProfile = () => {
     formData.append("password", password);
     formData.append("about", about);
     if (image) {
-      formData.append("avatar", image);
+      formData.append("image", image);
     }
 
     // formData.forEach((val, key) => {
@@ -64,10 +64,7 @@ const EditProfile = () => {
   return (
     <MainContainer>
       <section className="edit-card">
-        <h1
-          onClick={() => console.log(username, email, password, image, about)}
-          className="edit-card__title"
-        >
+        <h1 onClick={() => console.log(image)} className="edit-card__title">
           Edycja profilu
         </h1>
         <button onClick={updateUserData}>TEST DATA</button>
@@ -112,13 +109,15 @@ const EditProfile = () => {
             />
           </div>
           <div className="edit-card__form">
-            <label className="edit-card__label" htmlFor="">
+            <label className="edit-card__label" htmlFor="image">
               Zdjęcie profilowe
             </label>
             <input
               className="edit-card__file"
               type="file"
               onChange={(e) => setImage(e.target.files[0])}
+              name="image"
+              id="image"
             />
           </div>
           <div className="edit-card__form">

@@ -80,6 +80,22 @@
     margin: 0 20px;
   }
 
+  &__number {
+    padding: 10px 1px;
+
+    &--recenzja {
+      background-color: rgb(238, 183, 192);
+    }
+
+    &--artykul {
+      background-color: rgb(176, 152, 224);
+    }
+
+    &--esej {
+      background-color: rgb(46, 164, 207);
+    }
+  }
+
   &__posts {
     grid-row: 2;
     grid-column: 2 /5;
