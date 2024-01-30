@@ -8,25 +8,7 @@ const UserControlls = () => {
 	const navigate = useNavigate();
 
 	const logOutHandler = (e) => {
-		//chyba warto będzie to przenieść do auth context
 		e.preventDefault();
-		fetch('http://localhost:8080/logout', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			credentials: 'include',
-		})
-			.then((res) => {
-				return res.json();
-			})
-			.then((res) => {
-				console.log('to jest respons', res);
-			})
-			.catch((err) => {
-				console.log(err);
-			});
-
 		logOut();
 		navigate('/logout');
 	};

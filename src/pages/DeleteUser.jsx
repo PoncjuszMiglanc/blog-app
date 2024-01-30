@@ -4,7 +4,7 @@ import '../assets/scss/pages/delete-user.scss';
 import { useState } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
-// import { useAuth } from '../Hooks/AuthHooks';
+import { useAuth } from '../Hooks/AuthHooks';
 
 const DeleteUser = () => {
 	const [login, setLogin] = useState('');
@@ -12,7 +12,7 @@ const DeleteUser = () => {
 	const [isVisible, setIsVisible] = useState(false);
 	const [showErrMsg, setShowErrMsg] = useState(false);
 
-	// const { logOut } = useAuth();
+	const { logOut } = useAuth();
 
 	const { id } = useParams();
 	const navigate = useNavigate();
@@ -27,10 +27,9 @@ const DeleteUser = () => {
 
 			if (response.status >= 200 && response.status < 300) {
 				console.log('udało się usunąć', response.data);
-				// logOut(); sprawdzę czy cookie zostaje jak tylko logout odpale
+				logOut();
 				navigate('/');
 				//przyda się strona informująca o usunięciu
-				//logout
 			} else {
 				console.log('błąd po stronie rządania', response.data);
 			}
